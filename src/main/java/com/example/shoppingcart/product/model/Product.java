@@ -99,4 +99,7 @@ public class Product {
     public void setRatingTotal(int ratingTotal) {
         this.ratingTotal = ratingTotal;
     }
+
+    public Product() {
+    }
 }

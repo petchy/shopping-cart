@@ -17,7 +17,6 @@ public class ShoppingCartApplication {
 	public void initialProductData() {
 		Product product = new Product();
 		product.setTitle("adidas ultraboost");
-		product.setTitle("adidas ultraboost");
 		product.setProductCode("P001");
 		product.setImageUrl("https://adidas.com/ultraboost-climacool-1-dna.jpg");
 		product.setRating(5);

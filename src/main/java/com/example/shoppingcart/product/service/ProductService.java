@@ -13,6 +13,11 @@ public class ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     public List<Product> searchProduct(String title) {
         List <Product> result = productRepository.findProductsByTitle(title);
         return result;
