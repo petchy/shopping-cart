@@ -1,9 +1,7 @@
 package com.example.shoppingcart.product.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -19,6 +17,9 @@ public class Product {
     private int storeProvince;
     private float rating;
     private int ratingTotal;
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    private List<Thumbsnail> Thumbsnails;
 
     public int getId() {
         return id;

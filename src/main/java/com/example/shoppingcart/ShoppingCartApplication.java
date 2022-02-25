@@ -1,7 +1,9 @@
 package com.example.shoppingcart;
 
 import com.example.shoppingcart.product.model.Product;
+import com.example.shoppingcart.product.model.Thumbsnail;
 import com.example.shoppingcart.product.repository.ProductRepository;
+import com.example.shoppingcart.product.repository.ThumbsnailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +14,9 @@ import javax.annotation.PostConstruct;
 public class ShoppingCartApplication {
 	@Autowired
 	private ProductRepository productRepository;
+
+	@Autowired
+	private ThumbsnailRepository thumbsnailRepository;
 
 	@PostConstruct
 	public void initialProductData() {
@@ -26,6 +31,11 @@ public class ShoppingCartApplication {
 		product.setDiscountPercent(Float.valueOf(10));
 		product.setStoreProvince(1);
 		productRepository.save(product);
+
+		Thumbsnail thumbsnail = new Thumbsnail();
+		thumbsnail.setProduct(product);
+		thumbsnail.setUrl("https://adidas.com/ultraboost-climacool-1-dna_thumbs.jpg");
+		thumbsnailRepository.save(thumbsnail);
 
 		Product product2 = new Product();
 		product2.setTitle("adidas superstar");
